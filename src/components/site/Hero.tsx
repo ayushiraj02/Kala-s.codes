@@ -213,7 +213,7 @@ export function Hero() {
                     className="overflow-hidden rounded-t-xl border border-b-0 border-border bg-ink p-2 shadow-[var(--shadow-device)]"
                   >
                     <div className="overflow-hidden rounded-lg bg-background">
-                      <AutoScroll className="h-[15rem] sm:h-[19rem] lg:h-[21rem]" duration={40}>
+                      <AutoScroll className="h-[15rem] sm:h-[19rem] lg:h-[21rem]" duration={30}>
                         <Scaled designWidth={1280}>
                           <SitePreview t={hotel} />
                         </Scaled>
@@ -239,7 +239,7 @@ export function Hero() {
               className="absolute -bottom-16 -left-6 hidden w-[8rem] sm:block lg:-left-24 lg:w-[9.5rem]"
             >
               <PhoneFrame>
-                <AutoScroll className="h-[17rem] lg:h-[20rem]" duration={40}>
+                <AutoScroll className="h-[17rem] lg:h-[20rem]" duration={30}>
                   <Scaled designWidth={390}>
                     <SitePreview t={salon} mobile />
                   </Scaled>
