@@ -288,27 +288,45 @@
   }
 }
 
+/* ── Industries — mobile canvas layout ── */
+@media (max-width: 1023px) {
+  .kc-ind-mob {
+    display: flex;
+  }
+}
+
 /* ── Industries — reduced-motion fallback ── */
 @media (prefers-reduced-motion: reduce) {
   .kc-ind-section {
     height: auto !important;
   }
-  .kc-ind-section > div {
+  .kc-ind-section > .sticky {
     position: relative;
     height: auto;
     min-height: 50vh;
-    padding: 6rem 0;
+    padding: 4rem 0;
   }
-  .kc-ind-canvas {
+  .kc-ind-canvas,
+  .kc-ind-mob {
     opacity: 1 !important;
+    position: relative;
   }
   .kc-ind {
     opacity: 0.25 !important;
   }
+  .kc-ind-mob-item {
+    opacity: 0.2 !important;
+    position: relative !important;
+    display: inline-block;
+    margin: 0.5rem 1rem;
+  }
+  .kc-ind-mob-stmt,
   .kc-ind-stmt {
     opacity: 1 !important;
   }
-  .kc-ind-close {
+  .kc-ind-close,
+  .kc-ind-mob-close {
     display: none;
   }
 }
+
