@@ -314,11 +314,12 @@
   .kc-ind {
     opacity: 0.25 !important;
   }
-  .kc-ind-mob-item {
+  .kc-ind-mob-group {
     opacity: 0.2 !important;
     position: relative !important;
-    display: inline-block;
-    margin: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
   }
   .kc-ind-mob-stmt,
   .kc-ind-stmt {

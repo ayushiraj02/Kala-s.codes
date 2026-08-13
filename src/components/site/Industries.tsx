@@ -198,35 +198,32 @@ export function Industries() {
               </h3>
             </div>
 
-            {/* Single industry name — one visible at a time */}
-            <div className="relative mt-8" style={{ minHeight: "4rem" }}>
-              {ITEMS.map((item) => (
+            {/* Mobile groups — 4 groups instead of 13 individual items */}
+            <div className="relative mt-8" style={{ minHeight: "6rem" }}>
+              {[0, 1, 2, 3].map((g) => (
                 <div
-                  key={item.name}
-                  className="kc-ind-mob-item absolute inset-x-0 top-0 text-center"
-                  data-i={ITEMS.indexOf(item)}
+                  key={g}
+                  className="kc-ind-mob-group absolute inset-x-0 top-0 flex flex-wrap justify-center gap-x-3 gap-y-2"
+                  data-g={g}
                 >
-                  <span
-                    className="block font-display"
-                    style={{
-                      fontSize: "clamp(2rem, 10vw, 3rem)",
-                      letterSpacing: "-0.02em",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {item.name}
-                  </span>
-                  <span
-                    className="mt-2 block"
-                    style={{
-                      fontSize: "0.6rem",
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase" as const,
-                      color: "var(--muted-foreground)",
-                    }}
-                  >
-                    {item.cap}
-                  </span>
+                  {ITEMS.filter((item) => item.g === g).map((item, i, arr) => (
+                    <span key={item.name} className="flex items-center gap-3">
+                      <span
+                        className="block font-display"
+                        style={{
+                          fontSize: "clamp(1.6rem, 7.5vw, 2.4rem)",
+                          letterSpacing: "-0.02em",
+                          lineHeight: 1,
+                        }}
+                      >
+                        {item.name}
+                      </span>
+                      {/* Separator dot */}
+                      {i < arr.length - 1 && (
+                        <span className="text-muted-foreground opacity-30 text-[0.6rem]">•</span>
+                      )}
+                    </span>
+                  ))}
                 </div>
               ))}
             </div>
@@ -336,20 +333,20 @@ function buildDesktopTimeline(
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
- * MOBILE TIMELINE — single-industry vertical sequence
+ * MOBILE TIMELINE — 4 visual groups sequence
  * ═══════════════════════════════════════════════════════════════════════ */
 function buildMobileTimeline(
   gsap: any,
   _ST: any,
   trigger: HTMLElement,
 ) {
-  const count = ITEMS.length; // 13
-  // Each industry gets a slice of scroll. Shorter section height than desktop.
-  trigger.style.height = `${180 + count * 28}vh`; // ~544vh total
+  const groups = 4;
+  // Shorter section height for grouped scrolling (compressed UX)
+  trigger.style.height = "240vh";
 
   /* Initial state — hide all mobile items, show statement */
   gsap.set(".kc-ind-mob-stmt", { opacity: 0, y: 16 });
-  gsap.set(".kc-ind-mob-item", { opacity: 0, y: 12 });
+  gsap.set(".kc-ind-mob-group", { opacity: 0, y: 12 });
   gsap.set(".kc-ind-mob-close", { opacity: 0 });
 
   /* Heading fade — very gentle, only as it exits */
@@ -375,18 +372,18 @@ function buildMobileTimeline(
     },
   });
 
-  // Statement entrance (0.00 → 0.06)
-  tl.to(".kc-ind-mob-stmt", { opacity: 1, y: 0, duration: 0.05 }, 0.01);
+  // Statement entrance (0.00 → 0.10)
+  tl.to(".kc-ind-mob-stmt", { opacity: 1, y: 0, duration: 0.08 }, 0.02);
 
-  // Sequential industry reveals (0.06 → 0.88)
-  const sliceLen = 0.82 / count;  // ~0.063 per industry
+  // Sequential group reveals (0.10 → 0.85)
+  const sliceLen = 0.75 / groups;
   const inDur = sliceLen * 0.4;
   const holdEnd = sliceLen * 0.7;
   const outDur = sliceLen * 0.3;
 
-  for (let i = 0; i < count; i++) {
-    const start = 0.06 + i * sliceLen;
-    const sel = `.kc-ind-mob-item[data-i="${i}"]`;
+  for (let g = 0; g < groups; g++) {
+    const start = 0.10 + g * sliceLen;
+    const sel = `.kc-ind-mob-group[data-g="${g}"]`;
 
     // Fade in
     tl.to(sel, { opacity: 1, y: 0, duration: inDur, ease: "power2.out" }, start);
@@ -394,7 +391,7 @@ function buildMobileTimeline(
     tl.to(sel, { opacity: 0, y: -8, duration: outDur }, start + holdEnd);
   }
 
-  // Statement fades, closing appears (0.88 → 1.00)
-  tl.to(".kc-ind-mob-stmt", { opacity: 0, y: -12, duration: 0.06 }, 0.88);
-  tl.to(".kc-ind-mob-close", { opacity: 1, duration: 0.10 }, 0.90);
+  // Statement fades, closing appears (0.85 → 1.00)
+  tl.to(".kc-ind-mob-stmt", { opacity: 0, y: -12, duration: 0.06 }, 0.85);
+  tl.to(".kc-ind-mob-close", { opacity: 1, duration: 0.10 }, 0.88);
 }
