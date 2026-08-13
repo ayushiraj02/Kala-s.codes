@@ -279,3 +279,36 @@
 .kc-float {
   animation: kc-float 7s ease-in-out infinite;
 }
+
+/* ── Industries constellation — desktop positioning ── */
+@media (min-width: 1024px) {
+  .kc-ind-field .kc-ind {
+    left: var(--ix);
+    top: var(--iy);
+  }
+}
+
+/* ── Industries — reduced-motion fallback ── */
+@media (prefers-reduced-motion: reduce) {
+  .kc-ind-section {
+    height: auto !important;
+  }
+  .kc-ind-section > div {
+    position: relative;
+    height: auto;
+    min-height: 50vh;
+    padding: 6rem 0;
+  }
+  .kc-ind-canvas {
+    opacity: 1 !important;
+  }
+  .kc-ind {
+    opacity: 0.25 !important;
+  }
+  .kc-ind-stmt {
+    opacity: 1 !important;
+  }
+  .kc-ind-close {
+    display: none;
+  }
+}
