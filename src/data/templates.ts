@@ -32,6 +32,7 @@ export const industries = [
   "Lawyer",
   "Coaching",
   "E-commerce",
+  "Wedding",
 ] as const;
 
 export const templates: Template[] = [
@@ -248,6 +249,23 @@ export const templates: Template[] = [
       sub: "Small-batch homeware, shipped in two days across India.",
       cta: "Shop the range",
     },
+  },
+  {
+    slug: "ananda-wedding",
+    name: "Ananda",
+    industry: "Wedding",
+    tagline: "Romantic wedding invitation site with RSVP, venue map and event timeline.",
+    price: "₹18,000",
+    features: ["Digital RSVP", "Venue map", "Event timeline", "Photo gallery"],
+    palette: { bg: "#faf6f1", ink: "#2a1f2e", accent: "#b48c6f", soft: "#ede4d8" },
+    nav: ["Our Story", "Events", "Gallery", "RSVP"],
+    hero: {
+      eyebrow: "We're Getting Married",
+      title: "Priya & Arjun",
+      sub: "Join us as we celebrate love, family and the beginning of forever.",
+      cta: "RSVP now",
+    },
+    serif: true,
   },
 ];
 

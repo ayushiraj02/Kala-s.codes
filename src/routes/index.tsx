@@ -2,12 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { CursorGlow, useSmoothScroll } from "@/lib/motion";
 import { Nav } from "@/components/site/Nav";
+import { FloatingButtons } from "@/components/site/FloatingButtons";
 import { Hero } from "@/components/site/Hero";
 import { Why } from "@/components/site/Why";
 import { Templates } from "@/components/site/Templates";
 import { Comparison } from "@/components/site/Comparison";
 import { QuoteBuilder } from "@/components/site/QuoteBuilder";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
+import { TestimonialsRibbon } from "@/components/site/TestimonialsRibbon";
 import { Faq } from "@/components/site/Faq";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
@@ -42,6 +44,7 @@ function Index() {
     <>
       <CursorGlow />
       <Nav />
+      <FloatingButtons />
       <main>
         <Hero />
         <Why />
@@ -50,6 +53,7 @@ function Index() {
         <Comparison />
         <QuoteBuilder />
         <BeforeAfter />
+        <TestimonialsRibbon />
         <Faq />
         <Contact />
       </main>

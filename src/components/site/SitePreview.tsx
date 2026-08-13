@@ -119,6 +119,15 @@ const PHOTOS: Record<string, { hero: string; gallery: string[] }> = {
       "1523275335684-37898b6baf30",
     ],
   },
+  Wedding: {
+    hero: "1519741497674-611481863552",
+    gallery: [
+      "1511285560929-80b456fea0bc",
+      "1465495976277-4387d4b0b4c6",
+      "1507504031003-b417219a0fde",
+      "1520854221256-17451cc331bf",
+    ],
+  },
 };
 
 function unsplash(id: string, w: number, h: number) {
