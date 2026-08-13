@@ -12,7 +12,12 @@ export function Templates() {
     () => ["All", ...Array.from(new Set(templates.map((t) => t.industry)))],
     [],
   );
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 1023px)").matches) {
+      return "Salon";
+    }
+    return "All";
+  });
   const [hover, setHover] = useState<string | null>(null);
 
   const shown = filter === "All" ? templates : templates.filter((t) => t.industry === filter);
