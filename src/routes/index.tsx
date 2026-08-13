@@ -4,7 +4,6 @@ import { CursorGlow, useSmoothScroll } from "@/lib/motion";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Why } from "@/components/site/Why";
-import { Industries } from "@/components/site/Industries";
 import { Templates } from "@/components/site/Templates";
 import { Comparison } from "@/components/site/Comparison";
 import { QuoteBuilder } from "@/components/site/QuoteBuilder";
@@ -47,7 +46,6 @@ function Index() {
       <main>
         <Hero />
         <Why />
-        <Industries />
         <Templates />
         <MobileShowcase />
         <Comparison />
