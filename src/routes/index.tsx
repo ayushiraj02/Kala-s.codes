@@ -7,7 +7,6 @@ import { Why } from "@/components/site/Why";
 import { Templates } from "@/components/site/Templates";
 import { Comparison } from "@/components/site/Comparison";
 import { QuoteBuilder } from "@/components/site/QuoteBuilder";
-import { Process } from "@/components/site/Process";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { Faq } from "@/components/site/Faq";
 import { Contact } from "@/components/site/Contact";
@@ -50,7 +49,6 @@ function Index() {
         <MobileShowcase />
         <Comparison />
         <QuoteBuilder />
-        <Process />
         <BeforeAfter />
         <Faq />
         <Contact />
