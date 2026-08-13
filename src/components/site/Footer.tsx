@@ -9,9 +9,12 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 pb-10 pt-20 lg:px-8 lg:pt-28">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <p className="font-display text-[clamp(2.6rem,9vw,6.5rem)] leading-[0.95]">
-              Kala&apos;s<span className="text-brass">.</span>codes
-            </p>
+            <img
+              src="/favicon.jpg"
+              alt="कla's.codes"
+              className="h-16 w-auto object-contain lg:h-20"
+              draggable={false}
+            />
             <p className="mt-6 max-w-md text-sm opacity-75">
               A premium web design and development studio building calm, fast, high-converting
               websites for businesses that care how they&apos;re seen.
@@ -65,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-porcelain/15 pt-6 text-[11px] opacity-65">
-          <p>© {new Date().getFullYear()} Kala&apos;s.codes. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} कla&apos;s.codes. All rights reserved.</p>
           <Link to="/" className="hover:opacity-100">
             Designed &amp; engineered in-house
           </Link>

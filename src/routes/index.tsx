@@ -18,13 +18,13 @@ import { MobileShowcase } from "@/components/site/MobileShowcase";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kala's.codes — Luxury Web Design & Development Studio" },
+      { title: "Kala's.codes" },
       {
         name: "description",
         content:
           "Premium websites for salons, clinics, hotels, restaurants and growing brands. Fast, accessible, SEO-ready builds with live template demos and instant quotes.",
       },
-      { property: "og:title", content: "Kala's.codes — Luxury Web Design Studio" },
+      { property: "og:title", content: "Kala's.codes"  },
       {
         property: "og:description",
         content:

@@ -296,7 +296,7 @@ export function SitePreview({ t, mobile = false }: { t: Template; mobile?: boole
           </div>
           <div style={{ marginTop: 10, paddingTop: 10, borderTop: `1px solid ${p.bg}18`,
                          fontSize: 7, opacity: 0.3 }}>
-            © {new Date().getFullYear()} {t.name} — Kala's.codes
+            © {new Date().getFullYear()} {t.name} — कla's.codes
           </div>
         </div>
       </div>
@@ -599,7 +599,7 @@ export function SitePreview({ t, mobile = false }: { t: Template; mobile?: boole
         <div style={{ display: "flex", justifyContent: "space-between",
                        alignItems: "center", paddingTop: 24 }}>
           <div style={{ fontSize: 10, opacity: 0.28 }}>
-            © {new Date().getFullYear()} {t.name} — Built by Kala's.codes
+            © {new Date().getFullYear()} {t.name} — Built by कla's.codes
           </div>
           <div style={{ display: "flex", gap: 16 }}>
             {["Privacy", "Terms", "Sitemap"].map((l) => (

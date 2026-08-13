@@ -32,11 +32,13 @@ export function Nav() {
       style={{ transitionTimingFunction: "var(--ease-silk)" }}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
-        <Link to="/" className="flex min-w-0 items-center gap-2">
-          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-sm text-[13px] text-primary-foreground" style={{ background: "var(--gradient-royal)" }}>
-            K
-          </span>
-          <span className="truncate font-display text-lg tracking-tight">Kala&apos;s.codes</span>
+        <Link to="/" className="flex min-w-0 items-center">
+          <img
+            src="/logo-cropped.png"
+            alt="कla's"
+            className="h-8 w-auto object-contain lg:h-10"
+            draggable={false}
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
