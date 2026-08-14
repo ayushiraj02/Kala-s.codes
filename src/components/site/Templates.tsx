@@ -14,7 +14,7 @@ export function Templates() {
   );
   const [filter, setFilter] = useState(() => {
     if (typeof window !== "undefined" && window.matchMedia("(max-width: 1023px)").matches) {
-      return "Salon";
+      return "Restaurant";
     }
     return "All";
   });

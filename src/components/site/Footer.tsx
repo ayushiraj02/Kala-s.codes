@@ -10,9 +10,9 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <img
-              src="/favicon.jpg"
-              alt="कla's.codes"
-              className="h-16 w-auto object-contain lg:h-20"
+              src="/logo-footer.png"
+              alt="कla's"
+              className="h-14 w-auto object-contain lg:h-20"
               draggable={false}
             />
             <p className="mt-6 max-w-md text-sm opacity-75">
